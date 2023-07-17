@@ -1,0 +1,38 @@
+**Comandos Consola**
+
+*cypress tiene su propio sistema de comandos:
+
+1) node_modules\.bin\cypress run --> este comando empieza a ejecutar todos los test que tenga en el proyecto desde la consola.
+
+2) npx cypress run --> este comando tambien ejecuta todos los test del proyecto desde consola 
+
+3) npx cypress run --headed --> este comando lo que hace es ejecutar todos los test del proyecto pero desde el navegador
+
+4) npx cypress run --browser chrome --> con este comando se ejecutan todos los test del proyecto en el navegador con chrome 
+
+5) npx cypress run --spec "cypress\e2e\Ejemplos\Assert.cy.js"  --> este comando ejecuta un test especifico del proyecto con la ruta del test.
+
+6) npx cypress run --spec "cypress\e2e\Retos\*" --> con este comando ejecuta todos los test que esten contenidos en la carpeta de la ruta especificada.
+************************************************************************************
+
+**Configuracion y creacion de Snippes**
+
+Un snippes son lineas de codigo reutilizables y llamados por medio de un 
+comando definido por en el archivo 'javascript.json' este archivo lo generamos desde visual studio code con el
+comando ctrl+p y en el campo de buscador colocar la palabra "Snippes"  y al desplegar la lista de la busqueda 
+seleccionamos la opcion 'configure user snippes, 
+luego se seleciona el lenguaje javascript que es en el que estamos trabajando y seguidamente se nos genera el archivo 
+javascript.json ahi creamos cada uno de los snippes que deseemos y que creamos utiles para agilizar al momento de desarrollar 
+
+*************************************************************************************
+TIEMPOS EN cypress
+
+los tiempo de carga de la pag que vamos a probar lo podemos configurar en el archivo cypress.config.js esto seria para todo el proyecto 
+en caso de sea solo para una suit de pruebas entonces se pone en la suit con el siguiente comando -->  Cypress.config("defaultCommandTimeout", 2000)
+
+"pageLoadTimeout": 9000  --> aqui le estoy configurando tiempo de carga de 9seg 
+
+
+**************************************************************************************
+
+
