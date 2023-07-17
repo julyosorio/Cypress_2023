@@ -8,15 +8,37 @@ pipeline{
             parallel{
 
                 //la cantidad de instancias que se tengan en jenkins se tienen esclavos
-                stage('slave 1'){
+                stage('Slave 1'){
                     agent{
-                        label 'agent_1' //nombre la etiqueta que se configuro en jenkins
+                        label 'agent1_One' //nombre la etiqueta que se configuro en jenkins
                     }
                     steps{
-                        git url: '' //url del repositorio github
+                        git url: 'https://github.com/julyosorio/Cypress_2023.git' //url del repositorio github
                         bat'npm install' //si el repo no tiene la caprtena de node_modules se pone esta linea para que instale los modulos de node
                         bat 'npm update'
-                        bat 'npx cypress run --spec "cypress\e2e\Ejemplos\Assert.cy.js" --parallel' //puede correr instancias en paralelo
+                        bat 'npx cypress run  --parallel' //puede correr instancias en paralelo
+                    }
+                }
+                  stage('Slave 2'){
+                    agent{
+                        label 'agent1_Two' //nombre la etiqueta que se configuro en jenkins
+                    }
+                    steps{
+                        git url: 'https://github.com/julyosorio/Cypress_2023.git' //url del repositorio github
+                        bat'npm install' //si el repo no tiene la caprtena de node_modules se pone esta linea para que instale los modulos de node
+                        bat 'npm update'
+                        bat 'npx cypress run  --parallel' //puede correr instancias en paralelo
+                    }
+                }
+                  stage('Slave 3'){
+                    agent{
+                        label 'agent1_Three' //nombre la etiqueta que se configuro en jenkins
+                    }
+                    steps{
+                        git url: 'https://github.com/julyosorio/Cypress_2023.git' //url del repositorio github
+                        bat'npm install' //si el repo no tiene la caprtena de node_modules se pone esta linea para que instale los modulos de node
+                        bat 'npm update'
+                        bat 'npx cypress run  --parallel' //puede correr instancias en paralelo
                     }
                 }
             }
